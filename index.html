@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<title>three.js webgl - buffergeometry - lines drawrange</title>
+		<title>three.js 372-vertex distance graph</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link type="text/css" rel="stylesheet" href="ines%20drawrange_files/main.css">
@@ -59,7 +59,7 @@
 			let edgelist;
 			let timesteps;
 			
-			fetch("372.dg").then((response) => {  return response.json();
+			fetch("https://raw.githubusercontent.com/vsvor/vsvor.github.io/main/372.dg").then((response) => {  return response.json();
 			}).then((data) => {
 
 		        coords = data["coords"];
