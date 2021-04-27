@@ -66,7 +66,7 @@
 			let edgelist;
 			let timesteps;
 			
-			fetch("https://raw.githubusercontent.com/vsvor/vsvor.github.io/main/372.dg").then((response) => {  return response.json();
+			fetch("372.dg").then((response) => {  return response.json();
 			}).then((data) => {
 
 		        coords = data["coords"];
@@ -75,14 +75,14 @@
 			if ("subgraph" in data) {
 			    subgraph = data["subgraph"];
 			show_subgr = 1;
-		
+			alert(subgraph);
 		
 			}
 
 				if ("subgraph1" in data) {
 			    subgraph1 = data["subgraph1"];
 			show_subgr1 = 1;
-		
+			alert(subgraph1);
 		
 			}
 
@@ -187,7 +187,7 @@
 
 				const pMaterial = new THREE.PointsMaterial( {
 					color: 0xFFFFFF,
-					size: 5,
+					size: 10,
 					blending: THREE.AdditiveBlending,
 					transparent: true,
 					sizeAttenuation: false
@@ -334,8 +334,8 @@
 
 							 if (show_subgr && show_subgr1 ) {
 							
-								   if ((subgraph.includes(i) && subgraph1.includes(j)) || (subgraph1.includes(i) && subgraph.includes(j))) {
-								    alpha1 = 0.0;  alpha2 = 0.0;  alpha3 = 1.0;
+								   if ((subgraph.includes(i) && subgraph1.includes(j)) || (subgraph.includes(i) && subgraph1.includes(j))) {
+								    alpha1 = 0.0;  alpha2 = 1.0;  alpha3 = 1.0;
 								   
 								   }
 							}
@@ -382,7 +382,7 @@
 
 				const time = Date.now() * 0.001;
 
-				group.rotation.y = time * 0.005;
+				group.rotation.y = time * 0.03;
 				renderer.render( scene, camera );
 
 			}
